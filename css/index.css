@@ -1,0 +1,18 @@
+body {
+  padding-top: 50px;
+}
+
+.jumbotron {
+  background: url("http://placehold.it/350x150") no-repeat center center;
+  background-size: 100% 100%;
+  padding-top: 15%;
+}
+
+.hline {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
