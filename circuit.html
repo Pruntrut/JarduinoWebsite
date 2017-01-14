@@ -69,11 +69,15 @@
             à un robinet et au pots. Elles ne laissent passer l'eau que lorsqu'elles reçoivent un courant électrique.</p>
 
 
-            <h3>Circuit de contrôle des valves</h3>
+            <h3>Contrôle des valves</h3>
 
-            <p>Les valves utilisées dans ce project sont des valves à solénoïde. Elles comportent un petit électroaimant qui, lorsqu'il reçoit suffisamment de courant, enclenche un mécanisme qui laisse passer l'eau. Ainsi, il est possible de les contrôler en utilisant un microcontrôleur tel qu'une carte Arduino. 
-            Malheureusement, on ne peut pas connecter les valves directement à la carte. En effet, ces valves requièrent un courant de 12V pour s'activer. Or, l'Arduino ne supporte pas une telle tension. Il faut donc passer par un circuit intermédiaire opérant à 12V qui alimente les valves. Dans ce circuit se trouveront des transistors, qui ne laissent passer le courant que lorsqu'ils reçoivent un signal 5V de l'Arduino.
+            <p>
+                Les valves utilisées dans ce project sont des valves à solénoïde. Elles comportent un petit électroaimant qui, lorsqu'il reçoit suffisamment de courant, enclenche un mécanisme qui laisse passer l'eau. Ainsi, il est possible de les contrôler en utilisant un microcontrôleur tel qu'une carte Arduino.
+            </p> 
+            <p>
+                Malheureusement, on ne peut pas connecter les valves directement à la carte. En effet, ces valves requièrent un courant de 12V pour s'activer. Or, l'Arduino ne supporte pas une telle tension. Il faut donc passer par un circuit intermédiaire opérant à 12V qui alimente les valves. Dans ce circuit se trouveront des transistors, qui ne laissent passer le courant que lorsqu'ils reçoivent un signal 5V de l'Arduino.
             </p>
+
             <div class="row">
                 <div class="col-sm-8">
                     <img id="img-circuit" class="img-responsive" src="imgs/sanscapteurs.png" alt="Circuit connectant l'Arduino et les valves" />
@@ -103,7 +107,12 @@
                 <div id="caption"></div>
             </div>
 
-            
+
+            <h3>Capteurs d'humidité</h3>
+
+            <p>
+                Pour savoir à quel moment arroser les plantes, il faut des capteurs d'humidité. Ils sont plantés dans chacun des pots et relèvent le taux d'humidté de la terre. Le capteur que nous avons utilisé dans ce project est le <em><a href="https://www.dfrobot.com/index.php?route=product/product&keyword=moistu&product_id=599#.V8V9riki5FU">Gravity: Analog Soil Moisture Sensor For Arduino</a></em> de la marque DFRobot.
+            </p>
         </div>
         
         
