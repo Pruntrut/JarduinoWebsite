@@ -10,9 +10,14 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
         <!-- Bootstrap -->
         <link href="bcss/bootstrap.min.css" rel="stylesheet">
+        <script src="js/bootstrap.min.js"></script>
 
+        
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -69,23 +74,36 @@
             <p>Les valves utilisées dans ce project sont des valves à solénoïde. Elles comportent un petit électroaimant qui, lorsqu'il reçoit suffisamment de courant, enclenche un mécanisme qui laisse passer l'eau. Ainsi, il est possible de les contrôler en utilisant un microcontrôleur tel qu'une carte Arduino. 
             Malheureusement, on ne peut pas connecter les valves directement à la carte. En effet, ces valves requièrent un courant de 12V pour s'activer. Or, l'Arduino ne supporte pas une telle tension. Il faut donc passer par un circuit intermédiaire opérant à 12V qui alimente les valves. Dans ce circuit se trouveront des transistors, qui ne laissent passer le courant que lorsqu'ils reçoivent un signal 5V de l'Arduino.
             </p>
-
-            <a class="btn" data-toggle="modal" data-target="#modal-circuit">
-                <img id="img-circuit" class="img-responsive" src="imgs/sanscapteurs.png" alt="Circuit Arduino et Solénoïde" />
-            </a>
+            <div class="row">
+                <div class="col-sm-8">
+                    <img id="img-circuit" class="img-responsive" src="imgs/sanscapteurs.png" alt="Circuit connectant l'Arduino et les valves" />
+                </div>
+                <div class="col-sm-4" id="list-comp">
+                    <h4>Liste des composants</h4>
+                    <ul>
+                        <li>1x Arduino Uno</li>
+                        <li>3x Valves à Solénoïde 12V (Ouvertes par défaut)</li>
+                        <li>3x Transistor MOSFET TIP120</li>
+                        <li>3x Résistance 1k&Omega;</li>
+                        <li>3x Diode 1N4004</li>
+                        <li>1x Alimentation secteur (12V/1A)</li>
+                        <li>1x Connecteur jack pour l'alimentation</li>
+                        <li>Câbles de connexion</li>
+                    </ul>
+                </div>
+            </div>
 
             <!-- Modal -->
             <div id="modal-circuit" class="modal">
-
                 <!-- Close Button -->
                 <span class="close" onclick="document.getElementById('zoom-circuit').style.display='none'">&times;</span>
-
                 <!-- Image -->
                 <img class="modal-content" id="img01">
-
                 <!-- Caption -->
                 <div id="caption"></div>
             </div>
+
+            
         </div>
         
         
