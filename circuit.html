@@ -7,7 +7,6 @@
     
         <title>Jarduino - Circuit</title>
 
-
         <!-- Font Awesome -->
         <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
@@ -23,6 +22,9 @@
 
         <!-- Custom css -->
         <link rel="stylesheet" href="css/circuit.css" />
+
+        <!-- Custom js -->
+        <script src="js/circuit-modal.js"></script>
     </head>
     <body>
         <!-- Navbar -->
@@ -68,8 +70,22 @@
             Malheureusement, on ne peut pas connecter les valves directement à la carte. En effet, ces valves requièrent un courant de 12V pour s'activer. Or, l'Arduino ne supporte pas une telle tension. Il faut donc passer par un circuit intermédiaire opérant à 12V qui alimente les valves. Dans ce circuit se trouveront des transistors, qui ne laissent passer le courant que lorsqu'ils reçoivent un signal 5V de l'Arduino.
             </p>
 
-            <img src="imgs/sanscapteurs.png" class="img-responsive" />
-            <
+            <a class="btn" data-toggle="modal" data-target="#modal-circuit">
+                <img id="img-circuit" class="img-responsive" src="imgs/sanscapteurs.png" alt="Circuit Arduino et Solénoïde" />
+            </a>
+
+            <!-- Modal -->
+            <div id="modal-circuit" class="modal">
+
+                <!-- Close Button -->
+                <span class="close" onclick="document.getElementById('zoom-circuit').style.display='none'">&times;</span>
+
+                <!-- Image -->
+                <img class="modal-content" id="img01">
+
+                <!-- Caption -->
+                <div id="caption"></div>
+            </div>
         </div>
         
         
