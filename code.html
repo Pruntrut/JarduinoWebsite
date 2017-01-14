@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang=fr>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <title>Jarduino</title>
+
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+        <!-- Bootstrap -->
+        <link href="bcss/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Custom css -->
+        <link rel="stylesheet" href="css/circuit.css" />
+    </head>
+    <body>
+        <!-- Navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Jarduino</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                <li class="active"><a href="code.html"><i class="fa fa-cogs" aria-hidden="true"></i> Code</a></li>
+                <li><a href="circuit.html"><i class="fa fa-microchip" aria-hidden="true"></i> Circuit</a></li>
+                <li><a href="experience.html"><i class="fa fa-bar-chart" aria-hidden="true"></i> Expérience</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        
+        <!-- Main Page -->
+        <div class="container">
+            <h1>Programme Arduino</h1>
+            <h3>Introduction</h3>
+            <p>Le programme permet de contrôler 3 systèmes d'arosage, chacun constitué d'une valve et d'un capteur. Etant donné que le code est le même pour ces trois systèmes, les explications porteront sur un seul d'entre eux.</p>
+            <h3>Variables</h3>
+            <pre>
+                <code>
+                    # Général
+                    int frequence = 500; 
+                    
+                    # Spécifique à chaque système (ici le premier)
+                    int system1Pin = 2;
+                    int sensor1Pin = 1;
+                    int sensor1Limit = 639;
+                    int value1 = 0;
+                    int delay1 = 0;
+                </code>
+            </pre>
+            <p>Explications :</p>
+            <p>
+                <code>frequence</code> est la fréquence à laquelle les capteurs prendront les mesures, en ms. <code>system1Pin</code> et <code>sensor1Pin</code> donnent les pins sur lesquels sont branchés respectivement le circuit qui permet de change l'état de la valve et le capteur d'humidité.
+                <code>sensor1Limit</code> stocke la valeur minimale à avoir pour que la terre soit considérée comme assez arrosée. La mesure mesure actuelle prise par le capteur est sauvegardée dans <code>value1</code> et <code>delay1</code> permet de stocker le temps à attendre avant de reprendre une mesure.
+            </p>
+            <h3>Fonctions</h3>
+            <p>Le programme ne contient que deux fonctions très simples, une permettant d'ouvrir la vavle à un pin donné et l'autre permettant de la fermer.</p>
+            <pre>
+                <code>
+                        void openValve(int systemPin){
+                        digitalWrite(systemPin, HIGH);
+                    }
+
+                        void closeValve(int systemPin){
+                        digitalWrite(systemPin, LOW);
+                    }
+                </code>
+            </pre>
+        </div>
+        
+        
+        
+        
+        
+        
+            
+    </body>
+</html>
