@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     
-        <title>Jarduino</title>
+        <title>Jarduino - Circuit</title>
 
 
         <!-- Font Awesome -->
@@ -51,13 +51,25 @@
         
         <!-- Main Page -->
         <div class="container" id="main">
+
+
             <h1>Circuit et plomberie</h1>
+
             <p>Cet appareil est séparé en deux grandes parties : Le circuit électronique et le système de plombrerie.
-            Une puce Arduino est connectée à des capteurs d'humidité placés dans les pots. Cette puce lis les données
+            Une puce Arduino est connectée à des capteurs d'humidité placés dans les pots. Cette puce lit les données
             de ces capeurs et décide d'arroser les plantes ou non. Si l'humidité passe en dessous d'un certain seuil
             (défini à l'avance), l'Arduino envoie un signal électrique qui active les valves. Ces valves sont reliées
             à un robinet et au pots. Elles ne laissent passer l'eau que lorsqu'elles reçoivent un courant électrique.</p>
-            <h3></h3>
+
+
+            <h3>Circuit de contrôle des valves</h3>
+
+            <p>Les valves utilisées dans ce project sont des valves à solénoïde. Elles comportent un petit électroaimant qui, lorsqu'il reçoit suffisamment de courant, enclenche un mécanisme qui laisse passer l'eau. Ainsi, il est possible de les contrôler en utilisant un microcontrôleur tel qu'une carte Arduino. 
+            Malheureusement, on ne peut pas connecter les valves directement à la carte. En effet, ces valves requièrent un courant de 12V pour s'activer. Or, l'Arduino ne supporte pas une telle tension. Il faut donc passer par un circuit intermédiaire opérant à 12V qui alimente les valves. Dans ce circuit se trouveront des transistors, qui ne laissent passer le courant que lorsqu'ils reçoivent un signal 5V de l'Arduino.
+            </p>
+
+            <img src="imgs/sanscapteurs.png" class="img-responsive" />
+            <
         </div>
         
         
