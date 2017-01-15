@@ -23,6 +23,9 @@
 
         <!-- Custom css -->
         <link rel="stylesheet" href="css/circuit.css" />
+
+        <!-- Custom js -->
+        <script src="js/circuit-modal.js"></script>
     </head>
     <body>
         <!-- Navbar -->
@@ -53,48 +56,190 @@
         <div class="container" id="main">
             <h1>Programme Arduino</h1>
             <h3>Introduction</h3>
-            <p>Le programme permet de contrôler 3 systèmes d'arosage, chacun constitué d'une valve et d'un capteur. Etant donné que le code est le même pour ces trois systèmes, les explications porteront sur un seul d'entre eux.</p>
+            <p>Ecrit en C Arduino, le programme permet de contrôler 3 systèmes d'arrosage, chacun constitué d'une valve et d'un capteur. Etant donné que le code est le même pour ces trois systèmes, les explications porteront sur un seul d'entre eux.</p>
             <h3>Variables</h3>
-            <div lang="C">
-                <pre>
-                    <code>
-                        # Général
-                        int frequence = 500; 
-                        
-                        # Spécifique à chaque système (ici le premier)
-                        int system1Pin = 2;
-                        int sensor1Pin = 1;
-                        int sensor1Limit = 639;
-                        int value1 = 0;
-                        int delay1 = 0;
-                    </code>
+            
+            <div lang="C" class="row">
+                <div class="col-sm-6">
+                    <p>Explications :</p>
+                    <p>
+                        <code>frequence</code> est la fréquence à laquelle les capteurs prendront les mesures, en ms. <code>system1Pin</code> et <code>sensor1Pin</code> donnent les pins sur lesquels sont branchés respectivement le circuit qui permet de change l'état de la valve et le capteur d'humidité.
+                        <code>sensor1Limit</code> stocke la valeur minimale à avoir pour que la terre soit considérée comme assez arrosée. La mesure actuelle prise par le capteur est sauvegardée dans <code>value1</code> et <code>delay1</code> permet de stocker le nombre de mesures à attendre avant de pouvoir recommencer à arroser.
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <pre>
+                        <code>
+# Général
+int frequence = 500; 
+
+# Spécifique à chaque système (ici le premier)
+int system1Pin = 2;
+int sensor1Pin = 1;
+int sensor1Limit = 639;
+int value1 = 0;
+int delay1 = 0;
+                        </code>
                 </pre>
+                </div>
+                
             </div>
-            <p>Explications :</p>
-            <p>
-                <code>frequence</code> est la fréquence à laquelle les capteurs prendront les mesures, en ms. <code>system1Pin</code> et <code>sensor1Pin</code> donnent les pins sur lesquels sont branchés respectivement le circuit qui permet de change l'état de la valve et le capteur d'humidité.
-                <code>sensor1Limit</code> stocke la valeur minimale à avoir pour que la terre soit considérée comme assez arrosée. La mesure mesure actuelle prise par le capteur est sauvegardée dans <code>value1</code> et <code>delay1</code> permet de stocker le temps à attendre avant de reprendre une mesure.
-            </p>
+            
             <h3>Fonctions</h3>
-            <p>Le programme ne contient que deux fonctions très simples, une permettant d'ouvrir la vavle à un pin donné et l'autre permettant de la fermer.</p>
+            <p>Le programme ne contient que deux fonctions très simples, une permettant d'ouvrir la vavle à un pin donné et l'autre permettant de la fermer. Cela est réalisé en envoyant un signal électrique au circuit correspondant à la valve dont on veut modifier l'état (Voir : <a href="circuit.html">Contrôle des valves</a>)</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <pre>
+                        <code>
+# Ouverture
+
+void openValve(int systemPin){
+    digitalWrite(systemPin, HIGH);
+}
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="col-sm-6">
+                    <pre>
+                        <code>
+# Fermeture
+
+void closeValve(int systemPin){
+    digitalWrite(systemPin, LOW);
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <h3>Fonctionnent</h3>
+            <div class="row">
+                <div class="col-sm-5">
+                    <figure>
+                        <img class="img-responsive img-standard img-tuyaux" src="imgs/flowchart.png" alt="Le système de tuyauterie">
+                        <figcaption>
+                            Flow chart du programme
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-sm-7">
+                    <p>Le programme exécute les instructions qui se trouvent dans la fonction <code>loop</code>. Comme le nom de cette fonction l'indique, les instructions qu'elle contient seront répetées jusqu'à l'arrêt de l'Arduino.
+                    La logique est assez simple. Le programme commence par prendre une mesure d'humidité. Si cette dernière se trouve en dessous du seuil fixé (Voir : <a href="circuit.html">Courbe d'étalonnage</a>), le programme appelle la fonction <code>openValve</code>, avec le pin correspondant au système concerné. Dans le cas contraire, il appelle <code>closeValve</code> qui ferme ou laisse la valve fermée, avec le bon pin également.
+                    </p>
+                    <p>
+                    Pour éviter réarroser avant que l'eau ne se soit répandue dans la terre et attendre que les mesures soit stables, ce processus possède un compte à rebours qui s'enclenche après un arrosage. Cela fera en sorte que le programme attende 20 cycles avant de reprendre des mesures et de continuer d'arroser si nécessaire.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Code</h3>
             <pre>
                 <code>
-                    void openValve(int systemPin){
-                        digitalWrite(systemPin, HIGH);
-                    }
+int frequence = 500;
 
-                    void closeValve(int systemPin){
-                        digitalWrite(systemPin, LOW);
-                    }
+int system1Pin = 2;
+int system2Pin = 4;
+int system3Pin = 6;
+
+int sensor1Pin = 1;
+int sensor2Pin = 2;
+int sensor3Pin = 3;
+
+int sensor1Limit = 639; // 0.15
+int sensor2Limit = 709; // 0.2
+int sensor3Limit = 739; // 0.25
+
+int value1 = 0;
+int value2 = 0;
+int value3 = 0;
+
+int delay1 = 0;
+int delay2 = 0;
+int delay3 = 0;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(system1Pin, OUTPUT);
+  pinMode(system2Pin, OUTPUT);
+  pinMode(system3Pin, OUTPUT);
+}
+
+void openValve(int systemPin){
+  digitalWrite(systemPin, HIGH);
+}
+
+void closeValve(int systemPin){
+  digitalWrite(systemPin, LOW);
+}
+
+void loop() {
+  value1 = analogRead(sensor1Pin);
+  value2 = analogRead(sensor2Pin);
+  value3 = analogRead(sensor3Pin);
+
+  Serial.println(value1);
+  Serial.println(value2);
+  Serial.println(value3);
+  Serial.print("---------------------\n");
+  Serial.println(delay1);
+  Serial.println(delay1);
+  Serial.println(delay1);
+  Serial.print("---------------------\n");
+
+  if(value1 < sensor1Limit && delay1 == 0){
+    Serial.println("Valve 1 open");
+    openValve(system1Pin);
+    delay1 = 20;
+  }
+  else{
+    if(delay1 != 0){
+      delay1--;
+    }
+    closeValve(system1Pin);
+  }
+  
+  if(value2 < sensor2Limit && delay2 == 0){
+    Serial.println("Valve 2 open");
+    openValve(system2Pin);
+    delay2 = 20;
+  }
+  else{
+    if(delay2 != 0){
+      delay2--;
+    }
+    closeValve(system2Pin);
+  }
+  
+  if(value3 < sensor3Limit && delay3 == 0){
+    Serial.println("Valve 3 open");
+    openValve(system3Pin);
+    delay3 = 20;
+  }
+  else{
+    if(delay3 != 0){
+      delay3--;
+    }
+    closeValve(system3Pin);
+  }
+
+  delay(frequence);
+
+}
                 </code>
             </pre>
         </div>
+
         
+
         
-        
-        
-        
-        
-            
+        <!-- Modal -->
+            <div id="modal" class="modal">
+                <!-- Close Button -->
+                <span class="close">&times;</span>
+                <!-- Image -->
+                <img class="modal-content" id="img01" />
+                <!-- Caption -->
+                <div id="caption"></div>
+            </div>       
     </body>
 </html>
