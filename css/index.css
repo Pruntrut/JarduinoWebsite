@@ -7,19 +7,34 @@ body {
   margin-bottom: 40px;
 }
 
-.jumbotron {
+
+
+/* Jumbotron */
+
+.jumbotron{
   background: url(../imgs/jumbotron.jpg) no-repeat center center;
   background-size: cover;
   padding-top: 15%;
+  padding-bottom: 1%;
+  color: #000;
+  
+}
 
+.jumbotron p {
+  font-size: 2em;
+  font-weight: 400;
   color: #FFF;
+}
+
+#jumbotron-logo {
+  max-height: 250px;
 }
 
 .hline {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #FFF;
     margin: 1em 0;
     padding: 0;
 }
@@ -80,4 +95,8 @@ body {
     border-radius: 0;
     box-shadow: inset 0px 11px 52px -13px rgba(0,0,0,0.5);
 
+}
+
+.navbar-inverse .navbar-text {
+  color: #FFF;
 }
