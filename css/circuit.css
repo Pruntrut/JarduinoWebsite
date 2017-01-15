@@ -1,23 +1,66 @@
+body {
+    margin-bottom: 100px;
+}
+
+h1 {
+
+}
+
 p {
 	text-align: justify;
+}
+
+figcaption {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 #main {
     margin-top: 50px;
 }
 
-/* Style the Image Used to Trigger the Modal */
-#img-circuit {
-	border: 1px solid lightgrey;
-    border-radius: 5px;
-    padding: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+#list-comp {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
-#img-circuit:hover {
+
+
+
+/* Images */
+
+#img-circuit {
+    max-height: 400px;
+    float: right;
+}
+
+.img-moist {
+    max-height: 350px;
+}
+
+.img-standard {
+	border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 0px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.img-standard:hover {
 	opacity: 0.5;
 }
+
+.img-concl {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+
+
+
+/* Modal Styling */
 
 /* The Modal (background) */
 .modal {
@@ -39,8 +82,7 @@ p {
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 1000px;
+    max-width: 60%;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -78,9 +120,4 @@ p {
     .modal-content {
         width: 100%;
     }
-}
-
-#list-comp {
-	margin-top: auto;
-	margin-bottom: auto;
 }
