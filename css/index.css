@@ -1,23 +1,101 @@
 body {
   padding-top: 50px;
-  margin-bottom: 100px;
+  background-color: #F4F6EA
 }
 
-.jumbotron {
-  background: url("http://placehold.it/350x150") no-repeat center center;
-  background-size: 100% 100%;
+#main {
+  margin-bottom: 40px;
+}
+
+
+
+/* Jumbotron */
+
+.jumbotron{
+  background: url(../imgs/jumbotron.jpg) no-repeat center center;
+  background-size: cover;
   padding-top: 15%;
+  padding-bottom: 1%;
+  color: #000;
+  
+}
+
+.jumbotron p {
+  font-size: 2em;
+  font-weight: 400;
+  color: #FFF;
+}
+
+#jumbotron-logo {
+  max-height: 250px;
 }
 
 .hline {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #FFF;
     margin: 1em 0;
     padding: 0;
 }
 
-.navbar-inverse {
-  background-color: #19381F;
+
+/* Button */
+
+.btn-info {
+  background-color: #748265;
+  border-color: #748265
+}
+
+.btn-info:hover {
+  background-color: #509548;
+  border-color: #509548;
+}
+
+
+
+
+/* Navbar */
+
+.navbar {
+  background-color: #19381F;  
+  border: 0;
+}
+
+#navbar-top {
+  box-shadow: 0px 6px 136px 19px rgba(0,0,0,0.5);
+}
+
+.navbar-brand {
+  color: #fff;
+}
+
+.navbar-brand:hover {
+  color: #8DBA8D;
+}
+
+.navbar .navbar-nav>li>a {
+  color: #FFF;
+}
+
+.navbar .navbar-nav>li>a:hover {
+  background-color: #102414;
+  color: #8DBA8D;
+}
+
+.active {
+  background-color: #102414;
+}
+
+
+/* Footer */
+.navbar-static-bottom {
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: inset 0px 11px 52px -13px rgba(0,0,0,0.5);
+
+}
+
+.navbar-inverse .navbar-text {
+  color: #FFF;
 }
