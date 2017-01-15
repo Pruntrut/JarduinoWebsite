@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
         <title>Jarduino</title>
 
 
@@ -47,31 +47,67 @@
             </div>
           </div>
         </div>
-        
-        
+
+
         <!-- Main Page -->
         <div class="container" id="main">
             <h1>Expérience</h1>
+
             <h3>Présentation</h3>
-            <p>Le but de ce projet était de déterminer le poucentage d'humidité d'un pot de terre idéal pour un haricot,
-            afin qu'il puisse pousser de la façon la plus efficace possible.
-            Nous avons donc choisi de construire <a href="circuit.html">un système d'arrosage automatique</a>
-            répondant aux besoins en eau de la plante.</p>
-            <p>Nous avons choisi de nous intéresser à ce sujet, car, étant passionnés de programmation, nous voulions
-            intégrer de la robotique dans notre projet et la variété des domaines touchés par cette expérience nous
-            a également attiré.</p>
+            <p>Le but de ce projet était de déterminer le poucentage d'humidité idéal d'un pot de terre pour qu'une plante
+            puisse pousser de la façon la plus efficace possible.
+            Nous avons donc choisi de construire un système d'arrosage automatique répondant à ses besoins en eau.</p>
+            <p>Nous avons choisi de nous intéresser à ce sujet car, étant passionnés de programmation et de robotique
+            , nous voulions en intégrer dans notre projet et c'est la première idée qui nous est venue en tête lorsqu'on
+            nous a parlé d'un projet en lien avec la terre.</p>
+
+            <h3>Pré-projet</h3>
+            <p>Avant même de démarrer l'expérience, il nous a fallu créer un budget, car nous ne disposions pas de tous les
+            composants nécessaires au déroulement du projet.
+            Cela nous a donc forcé à bien réfléchir à tous les éléments dont nous aurions besoin et à faire attention à ce
+            qu'ils ne soient pas trop chers.</p>
+            <p>Concernant la plante que nous allions faire pousser, nous en voulions une qui puisse grandir assez haut et
+            rapidement pour que l'on puisse mesurer une différence notable entre les différentes pousses.
+            Après recherches et réflexion, nous avons décidé de nous arrêter sur les haricots, car c'est un plante qui pousse
+            relativement rapidement, qui atteint une hauteur acceptable et que nous avions directement à disposition.</p>
+
             <h3>Déroulement de l'expérience</h3>
-            <p></p>
+            <p>Tout d'abord, nous nous sommes séparés en deux groupes : l'un préparait <a href="circuit.html">le circuit et
+            la plomberie</a>, alors que l'autre s'occupait du <a href="code.html">programme Arduino</a>.<br/>
+            Comme le code n'a pris que très peu de temps à réaliser, nous avons décidé de réaliser une courbe d'étalonnage qui
+            traduirait les données reçues de l'Arduino en mesures compréhensibles, car nous avions remarqué que le capteur ne
+            retournait pas les valeurs du pourcentage d'eau, mais bien du pourcentage d'humidité du sol dans lequel il était
+            planté.
+            Nous avons donc choisi de mettre en relation sur un graphique le pourcentage d'eau (masse d'eau sur masse totale)
+            et les valeurs retournées par l'Arduino.</p>
+            <p>Pour ce faire, nous avons pesé 5 échantillons de terre que nous avions mouillés à différents degrés, allant de
+            complétement sec à très mouillé. Puis, nous avons pris les valeurs retournées par chaque capteur pour chaque
+            échantillon et en avons fait la moyenne. Nous avons ensuite séché toutes les terres et les avons pesé une deuxième
+            fois.<br/>
+            La différence entre la masse de terre mouillée et de terre sèche nous a permis de déduire la masse d'eau contenue dans
+            chaque échantillon. Nous n'avions plus qu'à faire le rapport masse d'eau sur masse totale pour avoir notre pourcentage
+            d'eau.</p>
+            <p>Nous avons ensuite mis ces valeurs et cells de l'Arduino dans un logiciel d'analyse de données, ce qui nous a permis
+            de créer notre courbe d'étalonnage, qui allait nous servir à donner des valeurs raisonnables à l'Arduino pour que les
+            haricots n'aient ni trop, ni pas assez d'eau.</p>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <img id="img-etalonnage" class="img-responsive" src="imgs/courbe_etalonnage.png" alt="Courbe d'étalonnage" />
+                </div>
+            </div>
+
             <h3>Résultats</h3>
             <p></p>
+
             <h3>Conclusion</h3>
             <p></p>
         </div>
-        
-        
-        
-        
-        
-            
+
+
+
+
+
+
     </body>
 </html>

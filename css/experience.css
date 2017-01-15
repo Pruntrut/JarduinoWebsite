@@ -2,3 +2,14 @@
     margin-top: 50px;
 }
 
+#img-etalonnage {
+	border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#img-etalonnage:hover {
+	opacity: 0.5;
+}
