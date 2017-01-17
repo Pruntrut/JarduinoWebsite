@@ -22,14 +22,15 @@
         <![endif]-->
 
         <!-- Custom css -->
-        <link rel="stylesheet" href="css/circuit.css" />
+        <link rel="stylesheet" href="css/code.css" />
+        <link rel="stylesheet" href="css/main.css" />
 
         <!-- Custom js -->
         <script src="js/circuit-modal.js"></script>
     </head>
     <body>
         <!-- Navbar -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-fixed-top">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -231,15 +232,33 @@ void loop() {
 
         
 
-        
         <!-- Modal -->
-            <div id="modal" class="modal">
-                <!-- Close Button -->
-                <span class="close">&times;</span>
-                <!-- Image -->
-                <img class="modal-content" id="img01" />
-                <!-- Caption -->
-                <div id="caption"></div>
-            </div>       
+        <div id="modal" class="modal">
+            <!-- Close Button -->
+            <span class="close">&times;</span>
+            <!-- Image -->
+            <img class="modal-content" id="img01" />
+            <!-- Caption -->
+            <div id="caption"></div>
+        </div>
+        
+        
+        <!-- Footer -->
+        <div class="navbar navbar-static-bottom">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <p class="navbar-text navbar-right">GFBienne, 2016-2017</p>
+                </div>
+            </div>
+        </div>
+        
     </body>
 </html>
