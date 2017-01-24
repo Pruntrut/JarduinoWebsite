@@ -66,7 +66,7 @@
             <p>
                 Cet appareil est séparé en deux grandes parties : Le circuit électronique et le système de 
                 plombrerie. Une puce Arduino est connectée à des capteurs d'humidité placés dans les pots. 
-                Cette puce lit les données de ces capeurs et décide d'arroser les plantes ou non. Si 
+                Cette puce lit les données de ces capteurs et décide d'arroser les plantes ou non. Si 
                 l'humidité passe en dessous d'un certain seuil (défini à l'avance), l'Arduino envoie un signal 
                 électrique qui active les valves. Ces valves sont reliées à un robinet et au pots. Elles ne 
                 laissent passer l'eau que lorsqu'elles reçoivent un courant électrique.
@@ -116,7 +116,8 @@
             </p>
 
             <p>
-                Les capteurs sont connectés à l'arduino au moyen de trois fils : 5V (rouge), GND (noir) et Analog (bleu). 5V et GND alimentent le capteur en électricité, tandis que les données sont transférées au moyen du troisième fil. Ce fil est branché sur les ports analogiques de l'Arduino. En effet, le capteur et transmet une tension entre 0 et 5V en fonction de l'humidité. Plus la terre esthumide, plus la tension sera élevée. Le microcontrôleur lira cette tension et ouvrira les valves lorsque qu'elle passe en dessous d'un certain seuil, <em><a href="experience.html#seuil">déterminé à l'avance</a></em>.
+                Les capteurs sont connectés à l'arduino au moyen de trois fils : 5V (rouge), GND (noir) et Analog (bleu). 5V et GND alimentent le capteur en électricité, tandis que les données sont transférées au moyen du troisième fil. Ce fil est branché sur les ports
+                analogiques de l'Arduino. En effet, le capteur transmet une tension entre 0 et 5V en fonction de l'humidité. Plus la terre est humide, plus la tension sera élevée. Le microcontrôleur lira cette tension et ouvrira les valves lorsque qu'elle passe en dessous d'un certain seuil, <em><a href="experience.html#seuil">déterminé à l'avance</a></em>.
             </p>
             
             <div class="row">
@@ -142,11 +143,14 @@
             <h3>Tuyauterie</h3>
 
             <p>
-                Au début du project, nous avons décidé d'arroser directement les plantes avec l'eau du robinet, plutôt que de puiser dans un réservoir. On gagne ainsi en autonomie puisqu'il ne faut pas venir faire le plein tous les quelques jours. En revanche, le système est plus susceptible au fuites, car il est à la pression du robinet.
+                Au début du projet, nous avons décidé d'arroser directement les plantes avec l'eau du robinet, plutôt que de puiser dans un réservoir. On gagne ainsi en autonomie puisqu'il ne faut pas venir faire le plein tous les quelques jours. En revanche, le système est
+                plus susceptible aux fuites, car il est à la pression du robinet.
             </p>
 
             <p>
-                Le système est composé de tuyaux flexibles en plastique clair, d'un diamètre d'environ un centimètre. Un tuyau est attaché au robinet et sécurisé par un serre-joint.  À partir du robinet, les tuyaux doivent se séparer en trois "branches", une pour chaque pot, grâce à deux raccord en "T" successifs. Chaque branche est reliée à une valve. Les valves utilisent des embouts jardin standard (Vis 3/4 pouces), il n'a donc pas été difficile de trouver des adaptaeurs pour nos tuyaux. Deplus la valve, un tuyaux descend directement dans le pot de plante. Tous les tuyaux sont serrés par des serres-joints afin d'éviter les fuites.
+                Le système est composé de tuyaux flexibles en plastique clair, d'un diamètre d'environ un centimètre. Un tuyau est attaché au robinet et sécurisé par un serre-joint.  À partir du robinet, les tuyaux doivent se séparer en trois "branches", une pour chaque pot,
+                grâce à deux raccords en "T" successifs. Chaque branche est reliée à une valve. Les valves utilisent des embouts jardin standard (Vis 3/4 pouces), il n'a donc pas été difficile de trouver des adaptateurs pour nos tuyaux. Depuis la valve, un tuyau descend
+                directement dans le pot de plante. Tous les tuyaux sont serrés par des serre-joints afin d'éviter les fuites.
             </p>
 
             <div class="row">
@@ -171,11 +175,12 @@
             <h3>Conclusion</h3>
 
             <p>
-                Le système est ainsi totalement autonome. L'eau est apportée par le robinet, sans qu'il soit nécessaire de vérifier les fuites, les valves et l'Arduino sont raccordées au secteur, il n'y a donc pas besoin de changer des batteries.
+                Le système est ainsi totalement autonome. L'eau est apportée par le robinet, sans qu'il soit nécessaire de vérifier les fuites, les valves et l'Arduino sont raccordées au secteur, il n'y a donc pas besoin de changer les batteries.
             </p>
 
             <p>
-                Lorsque l'humidité dans un pot passe en dessous d'un certain seuil. L'Arduino déclenche la valve. Un petit jet d'eau s'écoule alors vers la plante jusqu'à ce que l'humidité du sol remonte au-dessus de ce seuil. Lors de nos tests, nous avons fait Jarduino continuellement en marche pendant deux semaines, sans devoir intervernir. Ceci prouve la fiablilté de notre système.
+                Lorsque l'humidité dans un pot passe en dessous d'un certain seuil. L'Arduino déclenche la valve. Un petit jet d'eau s'écoule alors vers la plante jusqu'à ce que l'humidité du sol remonte au-dessus de ce seuil. Lors de nos tests, nous avons laissé Jarduino
+                continuellement en marche pendant deux semaines, sans devoir intervernir. Ceci prouve la fiablilté de notre système.
             </p>
 
             <div class="img-concl">
