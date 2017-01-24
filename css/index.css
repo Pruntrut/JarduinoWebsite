@@ -17,7 +17,7 @@ body {
   padding-top: 15%;
   padding-bottom: 1%;
   color: #000;
-  
+
 }
 
 .jumbotron p {
@@ -58,7 +58,7 @@ body {
 /* Navbar */
 
 .navbar {
-  background-color: #19381F;  
+  background-color: #19381F;
   border: 0;
 }
 
@@ -98,4 +98,13 @@ body {
 
 .navbar-text {
   color: #FFF;
+}
+
+.icon-bar {
+    background-color: #DDD;
+}
+
+.navbar-toggle {
+    border: 1px solid #666;
+    border-radius: 5px;
 }
