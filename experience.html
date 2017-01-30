@@ -24,7 +24,7 @@
         <!-- Custom css -->
         <link rel="stylesheet" href="css/experience.css" />
         <link rel="stylesheet" href="css/main.css" />
-        
+
         <!-- Custom js -->
         <script src="js/circuit-modal.js"></script>
     </head>
@@ -58,34 +58,36 @@
             <h1>Expérience</h1>
 
             <h3>Présentation</h3>
-            <p>Le but de ce projet était de créer un système d'arrosage automatique. De manière secondaire on pouvait également déterminer le poucentage d'humidité idéal d'un pot de terre pour qu'une plante
-            puisse pousser de la façon la plus efficace possible.
+            <p>Le but de ce projet était de créer un système d'arrosage automatique. De manière secondaire, nous voulions également
+            déterminer le poucentage d'humidité idéal d'un pot de terre pour qu'une plante puisse pousser de la façon la plus efficace possible.
             Nous avons donc choisi de construire un système d'arrosage automatique répondant à ses besoins en eau.</p>
-            <p>Nous avons décidé de réaliser ce projet parce que nous sommes intéressés par la programmation et la robotique. C'est donc une des premières idées qui nous est venue en tête lorsque nous avons
-            appris les conditions que devaient remplir le projet.</p>
+            <p>Nous avons décidé de réaliser ce projet car nous sommes intéressés par la programmation et la robotique. C'est donc une des
+            premières idées qui nous est venue en tête lorsque nous avons appris les conditions que devaient remplir le projet.</p>
 
             <h3>Pré-projet</h3>
             <p>Avant même de démarrer l'expérience, il nous a fallu créer un budget, car nous ne disposions pas de tous les
             composants nécessaires au déroulement du projet.
             Cela nous a donc forcé à bien réfléchir à tous les éléments dont nous aurions besoin et à faire attention à ce
-            qu'ils ne soient pas trop chers. Nous en avons déduis qu'il était mieux de faire l'expérience avec 3 pots, 2 n'étant pas assez et 4 étant trop cher.</p>
-            <p>Concernant la plante que nous allions faire pousser, nous en voulions une qui puisse grandir assez haut et
-            rapidement pour que l'on puisse constater une différence notable entre les différentes pousses.
+            qu'ils ne soient pas trop chers. Nous en avons déduit qu'il était préférable de faire l'expérience avec 3 pots,
+            2 n'étant pas suffisant et 4 coûtant trop cher.</p>
+            <p>Comme nous allions faire pousser une plante, nous en voulions une qui puisse grandir assez haut et
+            rapidement afin que l'on puisse constater un écart de hauteur notable entre les différentes pousses.
             Après recherches et réflexion, nous avons décidé de nous arrêter sur les haricots, car c'est une plante qui pousse
             relativement rapidement et atteint une hauteur acceptable. De plus, nous en avions directement à disposition au gymnase.</p>
-            <p>Pour déterminer le pourcentage d'humidité de chaque pot, nous avons décider de faire une recherche préaéable sur internet afin de ne pas perdre trop de temps.
-            Selon <i>TODO : ajouter source</i>, la terre idéale pour les haricots doit avoir une humidité se situant aux alentours de 20%. Nous avons donc décider de faire des pots avec 15, 20 et 25 pourcent d'humidité.</p>
+            <p>Pour déterminer le pourcentage d'eau dans chaque pot, nous avons décidé de faire des recherches préalables sur internet afin de ne pas perdre trop de temps.
+            Selon <a href="https://fr.wikipedia.org/wiki/Haricot">l'article Wikipedia consacré au haricot</a>, l'humidité idéale de la terre pour un haricot se situe aux alentours de 15%.
+            Nous avons donc décidé d'utiliser des pots de 15, 20 et 25% d'eau (masse d'eau sur masse de totale).</p>
 
             <h3>Déroulement de l'expérience</h3>
             <p>Tout d'abord, nous nous sommes séparés en deux groupes : l'un préparait <a href="circuit.html">le circuit et
             la plomberie</a>, alors que l'autre s'occupait du <a href="code.html">programme Arduino</a>.<br/>
-            Comme le code n'a pris que très peu de temps à réaliser, nous avons décidé de réaliser une courbe d'étalonnage qui
+            Comme le code n'a pris que très peu de temps à écrire, nous avons décidé de réaliser une courbe d'étalonnage qui
             traduirait les données reçues de l'Arduino en mesures compréhensibles, car nous avions remarqué que le capteur ne
             retournait pas les valeurs du pourcentage d'eau, mais bien du pourcentage d'humidité du sol dans lequel il était
             planté.
             Nous avons donc choisi de mettre en relation sur un graphique le pourcentage d'eau (masse d'eau sur masse totale)
             et les valeurs retournées par l'Arduino.</p>
-            <p>Pour ce faire, nous avons pesé 5 échantillons de terre que nous avions mouillés à différents degrés, allant de
+            <p>Pour ce faire, nous avons pesé 5 échantillons de terre que nous avions mouillé à différents degrés, allant de
             complétement sec à très mouillé. Puis, nous avons pris les valeurs retournées par chaque capteur pour chaque
             échantillon et en avons fait la moyenne. Nous avons ensuite séché toutes les terres et les avons pesées une deuxième
             fois.<br/>
@@ -95,27 +97,34 @@
             <p>Nous avons ensuite mis ces valeurs et cells de l'Arduino dans un logiciel d'analyse de données, ce qui nous a permis
             de créer notre courbe d'étalonnage, qui allait nous servir à donner des valeurs raisonnables à l'Arduino pour que les
             haricots n'aient ni trop, ni pas assez d'eau.</p>
-            
+
             <div class="row">
                 <div class="col-sm-8">
                     <img class="img-responsive img-standard" src="imgs/courbe_etalonnage.png" alt="Courbe d'étalonnage" />
                 </div>
             </div>
-            
+
             <h3>Problèmes rencontrés</h3>
-            <p>Durant l'expérience, nous avons rencontrés deux problèmes principaux.</p>
-            <p>Le premier problème est venu du fait que les piles alimentant l'Arduino n'ont pas tenu une semaine. Par conséquent, le système d'arrosage a arrêté de fonctionner pendant quelques jours.
-            Cela n'a cependant pas créer de décalage entre l'humidité de chaque pot, puisque ils ont tous subis cette panne. La solution au problème a été de brancher l'Arduino au secteur grâce à un chargeur 9V.</p>
-            <p>Vers la fin de l'expérience, nous avons découvert qu'un des capteurs avait cessé de fonctionné durant la nuit. Nous avons donc immédiatement stoppé l'expérience au stade où elle se trouvait.
+            <p>Durant l'expérience, nous avons rencontré deux problèmes principaux :</p>
+            <p>Le premier problème est venu des piles alimentant l'Arduino qui n'ont pas tenu une semaine. Par conséquent, le système d'arrosage a arrêté de fonctionner pendant quelques jours.
+            Cela n'a cependant pas créé de décalage d'humidité entre les pots, puisqu'ils ont tous subi cette panne. La solution au problème a été de brancher l'Arduino au secteur grâce à un chargeur 9V.</p>
+            <p>Vers la fin de l'expérience, nous avons découvert qu'un des capteurs avait cessé de fonctionner durant la nuit. Nous avons donc immédiatement stoppé l'expérience au stade où elle se trouvait.
             Nous avons constaté l'état des plantes et jugé que nous pouvions terminer le test.</p>
 
             <h3>Résultats</h3>
-            
-            <p>Nous avons déterminer qu'il était mieux d'avoir 25% d'eau ou plus pour la croissance du haricot, selon les observations faites dès que nous avons remarqué le capteur défectueux
-            En effet, le haricot ayant le plus poussé se trouvait dans le pot à 25% d'humidité.</p>
+            <p>Nous avons remarqué que, sur cette expérience, 25% d'eau était la valeur la plus idéale, selon les observations faites
+            lorsque nous avons remarqué le capteur défectueux.
+            En effet, le haricot ayant le plus poussé se trouvait dans le pot à 25% d'humidité. La différence de croissance entre les
+            plantes était telle que nous n'avons pas eu besoin de les mesurer. Celle dans le pot à 20% était donc considérablement plus petite
+            que la première, mais tout de même plus grande que le haricot à 15% d'eau.</p>
 
             <h3>Conclusion</h3>
-            <p>Malgré les problèmes rencontrés, le système d'arrosage a bien fonctionné et nous sommes satisafait du résultat. Nous pourrions améliorer la précision de l'humidité idéal pour le haricots en répétant la méthode utilisé pour nous rapprocher de plus en plus.</p>
+            <p>Nous avons donc obtenu des résultats concluants, car nous avons réussi à remarquer un écart de hauteur notable entre les
+            différents haricots. Cela prouve donc la validité de notre méthode.</br>
+            Nous aurions cependant pu améliorer notre précision sur le pourcentage d'eau idéal en recommençant l'expérience avec des valeurs
+            se rapprochant de celles de la plante la plus grande.
+            Malgré les problèmes rencontrés, le système d'arrosage a bien fonctionné et nous sommes tout de même satisafaits du résultat.</p>
+
         </div>
 
         <!-- Modal -->
@@ -127,8 +136,8 @@
             <!-- Caption -->
             <div id="caption"></div>
         </div>
-        
-        
+
+
         <!-- Footer -->
         <div class="navbar navbar-static-bottom">
             <div class="container">
