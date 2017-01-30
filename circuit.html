@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
         <title>Jarduino - Circuit</title>
 
         <!-- Font Awesome -->
@@ -17,7 +17,7 @@
         <link href="bcss/bootstrap.min.css" rel="stylesheet">
         <script src="js/bootstrap.min.js"></script>
 
-        
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -55,8 +55,8 @@
             </div>
           </div>
         </div>
-        
-        
+
+
         <!-- Main Page -->
         <div class="container" id="main">
 
@@ -76,16 +76,16 @@
             <h3>Contrôle des valves</h3>
 
             <p>
-                Les valves utilisées dans ce project sont des valves à solénoïde. Elles comportent un petit 
-                électroaimant qui, lorsqu'il reçoit suffisamment de courant, enclenche un mécanisme qui laisse 
-                passer l'eau. Ainsi, il est possible de les contrôler en utilisant un microcontrôleur tel 
+                Les valves utilisées dans ce project sont des valves à solénoïde. Elles comportent un petit
+                électroaimant qui, lorsqu'il reçoit suffisamment de courant, enclenche un mécanisme qui laisse
+                passer l'eau. Ainsi, il est possible de les contrôler en utilisant un microcontrôleur tel
                 qu'une carte Arduino.
-            </p> 
+            </p>
             <p>
-                Malheureusement, on ne peut pas connecter les valves directement à la carte. En effet, ces 
-                valves requièrent un courant de 12V pour s'activer. Or, l'Arduino ne supporte pas une telle 
-                tension. Il faut donc passer par un circuit intermédiaire opérant à 12V qui alimente les 
-                valves. Dans ce circuit se trouveront des transistors, qui ne laissent passer le courant que 
+                Malheureusement, on ne peut pas connecter les valves directement à la carte. En effet, ces
+                valves requièrent un courant de 12V pour s'activer. Or, l'Arduino ne supporte pas une telle
+                tension. Il faut donc passer par un circuit intermédiaire opérant à 12V qui alimente les
+                valves. Dans ce circuit se trouveront des transistors, qui ne laissent passer le courant que
                 lorsqu'ils reçoivent un signal 5V de l'Arduino.
             </p>
 
@@ -112,14 +112,14 @@
             <h3>Capteurs d'humidité</h3>
 
             <p>
-                Pour savoir à quel moment arroser les plantes, il faut des capteurs d'humidité. Ils sont plantés dans chacun des pots et relèvent le taux d'humidté de la terre. Le capteur que nous avons utilisé dans ce project est le <em><a href="https://www.dfrobot.com/index.php?route=product/ product&keyword=moistu&product_id=599#.V8V9riki5FU">Gravity: Analog Soil Moisture SensorFor Arduino</a></em> de la marque DFRobot. Nous en avons commandés un par pot, afin de pouvoir contôler chaque plante avec précision.
+                Pour savoir à quel moment arroser les plantes, il faut des capteurs d'humidité. Ils sont plantés dans chacun des pots et relèvent le taux d'humidité de la terre. Le capteur que nous avons utilisé dans ce projet est le <em><a href="https://www.dfrobot.com/index.php?route=product/ product&keyword=moistu&product_id=599#.V8V9riki5FU">Gravity: Analog Soil Moisture SensorFor Arduino</a></em> de la marque DFRobot. Nous en avons commandés un par pot, afin de pouvoir contôler chaque plante avec précision.
             </p>
 
             <p>
                 Les capteurs sont connectés à l'arduino au moyen de trois fils : 5V (rouge), GND (noir) et Analog (bleu). 5V et GND alimentent le capteur en électricité, tandis que les données sont transférées au moyen du troisième fil. Ce fil est branché sur les ports
                 analogiques de l'Arduino. En effet, le capteur transmet une tension entre 0 et 5V en fonction de l'humidité. Plus la terre est humide, plus la tension sera élevée. Le microcontrôleur lira cette tension et ouvrira les valves lorsque qu'elle passe en dessous d'un certain seuil, <em><a href="experience.html#seuil">déterminé à l'avance</a></em>.
             </p>
-            
+
             <div class="row">
                 <div class="col-sm-5">
                     <figure>
