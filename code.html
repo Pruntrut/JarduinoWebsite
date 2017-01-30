@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
         <title>Jarduino</title>
 
 
@@ -51,19 +51,20 @@
             </div>
           </div>
         </div>
-        
-        
+
+
         <!-- Main Page -->
         <div class="container" id="main">
             <h1>Programme Arduino</h1>
             <h3>Introduction</h3>
             <p>Ecrit en C Arduino, le programme permet de contrôler trois systèmes d'arrosage, chacun constitué d'une valve et d'un capteur. Etant donné que le code est le même pour ces trois systèmes, les explications porteront sur un seul d'entre eux.</p>
             <h3>Variables</h3>
-            
+
             <div lang="C" class="row">
                 <div class="col-sm-6">
                     <p>Explications :</p>
                     <p>
+
                         <code>frequence</code> est la fréquence à laquelle les capteurs prendront les mesures, en ms. <code>system1Pin</code> et <code>sensor1Pin</code> donnent les pins sur lesquels sont branchés respectivement le circuit qui permet de change l'état de la valve et le capteur d'humidité.
                         <code>sensor1Limit</code> stocke la valeur minimale à avoir pour que la terre soit considérée comme assez arrosée. La mesure actuelle prise par le capteur est sauvegardée dans <code>value1</code>, <code>delay1</code> permet ensuite de stocker le nombre de mesures à attendre avant de pouvoir recommencer à arroser.
                     </p>
@@ -71,6 +72,7 @@
                 <div class="col-sm-6">
                     <pre>
                         <code>
+                        
 // Général
 int frequence = 500; 
 
@@ -83,9 +85,9 @@ int delay1 = 0;
                         </code>
                 </pre>
                 </div>
-                
+
             </div>
-            
+
             <h3>Fonctions</h3>
             <p>Le programme ne contient que deux fonctions très simples, une permettant d'ouvrir la valve à un pin donné et l'autre permettant de la fermer. Cela est réalisé en envoyant un signal électrique au circuit correspondant à la valve dont on veut modifier l'état (Voir : <a href="circuit.html">Contrôle des valves</a>)</p>
             <div class="row">
@@ -198,7 +200,7 @@ void loop() {
     }
     closeValve(system1Pin);
   }
-  
+
   if(value2 < sensor2Limit && delay2 == 0){
     Serial.println("Valve 2 open");
     openValve(system2Pin);
@@ -210,7 +212,7 @@ void loop() {
     }
     closeValve(system2Pin);
   }
-  
+
   if(value3 < sensor3Limit && delay3 == 0){
     Serial.println("Valve 3 open");
     openValve(system3Pin);
@@ -230,7 +232,7 @@ void loop() {
             </pre>
         </div>
 
-        
+
 
         <!-- Modal -->
         <div id="modal" class="modal">
@@ -241,8 +243,8 @@ void loop() {
             <!-- Caption -->
             <div id="caption"></div>
         </div>
-        
-        
+
+
         <!-- Footer -->
         <div class="navbar navbar-static-bottom">
             <div class="container">
@@ -259,6 +261,6 @@ void loop() {
                 </div>
             </div>
         </div>
-        
+
     </body>
 </html>
