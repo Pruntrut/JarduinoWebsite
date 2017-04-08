@@ -6,7 +6,6 @@ window.onload = function() {
         if (viewportwidth < 767)
         {
             buttons = document.getElementById("buttons")
-            console.log(buttons)
             buttons.style.display = "none"
         }
     }
